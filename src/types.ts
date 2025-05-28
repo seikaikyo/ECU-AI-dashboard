@@ -1,68 +1,27 @@
-// 暫時使用 any 類型來解決導入問題，之後再逐步完善
-declare module '@grafana/data' {
-  export interface PanelData {
-    series: any[];
-    timeRange: TimeRange;
-    state: any;
-  }
-  
-  export interface TimeRange {
-    from: any;
-    to: any;
-  }
-  
-  export interface FieldOverrideContext {
-    // 暫時留空
-  }
-  
-  export class PanelPlugin<T = any> {
-    constructor(component: React.ComponentType<any>);
-    setPanelOptions(builder: any): PanelPlugin<T>;
-    setMigrationHandler(handler: any): PanelPlugin<T>;
-    useFieldConfig(config: any): PanelPlugin<T>;
-  }
-  
-  export interface DataFrame {
-    fields: Field[];
-    length: number;
-  }
-  
-  export interface Field {
-    name: string;
-    type: FieldType;
-    values: any[];
-  }
-  
-  export enum FieldType {
-    time = 'time',
-    number = 'number',
-    string = 'string',
-    boolean = 'boolean'
-  }
+// ECU AI Grafana Plugin 型別定義
+// 暫時使用簡化的型別定義來避免衝突
+
+import React from 'react';
+
+// 基本 Grafana 型別聲明
+export interface PanelData {
+  series: any[];
+  timeRange: TimeRange;
+  state: any;
 }
 
-declare module '@grafana/ui' {
-  export interface PanelProps<T = any> {
-    options: T;
-    data: any;
-    width: number;
-    height: number;
-    timeRange: any;
-    onOptionsChange: (options: T) => void;
-  }
-  
-  export const Select: React.ComponentType<any>;
-  export const MultiSelect: React.ComponentType<any>;
-  export const Alert: React.ComponentType<any>;
-  export const LoadingPlaceholder: React.ComponentType<any>;
-  export const Card: React.ComponentType<any>;
-  export const Badge: React.ComponentType<any>;
-  export const Button: React.ComponentType<any>;
-  export const IconButton: React.ComponentType<any>;
-  export const InlineField: React.ComponentType<any>;
-  export const InlineFieldRow: React.ComponentType<any>;
-  export const Input: React.ComponentType<any>;
-  export const Switch: React.ComponentType<any>;
+export interface TimeRange {
+  from: any;
+  to: any;
+}
+
+export interface PanelProps<T = any> {
+  options: T;
+  data: PanelData;
+  width: number;
+  height: number;
+  timeRange: TimeRange;
+  onOptionsChange: (options: T) => void;
 }
 
 // ECU 監控數據介面
@@ -269,4 +228,20 @@ export interface APIResponse<T> {
   data: T;
   error?: string;
   timestamp: number;
+}
+
+// ECU Panel Props
+export interface ECUPanelProps extends PanelProps<ECUPanelOptions> {}
+
+// 模擬的 UI 組件型別
+export interface SelectProps {
+  value: any;
+  onChange: (value: any) => void;
+  options: Array<{ label: string; value: any }>;
+}
+
+export interface AlertProps {
+  title?: string;
+  severity?: 'error' | 'warning' | 'info' | 'success';
+  children: React.ReactNode;
 }
