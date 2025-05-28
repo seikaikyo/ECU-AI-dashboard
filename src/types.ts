@@ -1,5 +1,13 @@
-import { PanelData, TimeRange, FieldOverrideContext, PanelPlugin } from '@grafana/data';
-import { PanelProps } from '@grafana/ui';
+import { 
+  PanelData, 
+  TimeRange, 
+  FieldOverrideContext, 
+  PanelPlugin,
+  DataFrame,
+  Field,
+  FieldType
+} from '@grafana/data';
+import { PanelProps as GrafanaPanelProps } from '@grafana/ui';
 
 // ECU 監控數據介面
 export interface ECUData {
@@ -27,7 +35,7 @@ export interface AIAnalysis {
 export interface DeviceConfig {
   id: string;
   name: string;
-  type: 'ECU' | 'EGR' | 'HEPA';
+  type: 'ECU' | 'EGR' | 'HEPA_FILTER';
   location?: string;
   status: 'online' | 'offline' | 'maintenance';
 }
@@ -145,7 +153,7 @@ export const defaultOptions: ECUPanelOptions = {
     },
     {
       key: 'hepaEfficiency',
-      name: 'HEPA效率差',
+      name: 'HEPA濾網效率',
       unit: '%',
       color: '#3b82f6',
       thresholds: { warning: 90, critical: 85 },
@@ -181,7 +189,7 @@ export const defaultOptions: ECUPanelOptions = {
 };
 
 // Panel Props 介面
-export interface ECUPanelProps extends PanelProps<ECUPanelOptions> {
+export interface ECUPanelProps extends GrafanaPanelProps<ECUPanelOptions> {
   data: PanelData;
   timeRange: TimeRange;
   onOptionsChange: (options: ECUPanelOptions) => void;

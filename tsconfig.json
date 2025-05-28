@@ -21,20 +21,24 @@
       "@/*": ["*"],
       "@/components/*": ["components/*"],
       "@/types": ["types"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@grafana/data": ["node_modules/@grafana/data"],
+      "@grafana/ui": ["node_modules/@grafana/ui"],
+      "@grafana/runtime": ["node_modules/@grafana/runtime"]
     },
-    "typeRoots": ["node_modules/@types", "./src/types"],
+    "typeRoots": ["node_modules/@types", "./src/types", "./node_modules/@grafana"],
     "types": ["node", "jest", "@grafana/data", "@grafana/ui", "@grafana/runtime"]
   },
   "include": [
     "src/**/*",
-    "src/**/*.json"
+    "src/**/*.json",
+    "types/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "**/*.test.ts",
-    "**/*.test.tsx",
+    "**/*.test.tsx", 
     "**/*.spec.ts",
     "**/*.spec.tsx"
   ]
