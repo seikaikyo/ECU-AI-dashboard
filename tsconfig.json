@@ -1,45 +1,17 @@
 {
-  "extends": "@grafana/tsconfig",
   "compilerOptions": {
     "target": "ES2018",
     "lib": ["ES2018", "DOM"],
     "module": "ESNext",
     "moduleResolution": "node",
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "outDir": "./dist",
-    "strict": true,
+    "jsx": "react-jsx",
+    "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./src",
-    "paths": {
-      "@/*": ["*"],
-      "@/components/*": ["components/*"],
-      "@/types": ["types"],
-      "@/utils/*": ["utils/*"],
-      "@grafana/data": ["node_modules/@grafana/data"],
-      "@grafana/ui": ["node_modules/@grafana/ui"],
-      "@grafana/runtime": ["node_modules/@grafana/runtime"]
-    },
-    "typeRoots": ["node_modules/@types", "./src/types", "./node_modules/@grafana"],
-    "types": ["node", "jest", "@grafana/data", "@grafana/ui", "@grafana/runtime"]
+    "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src/**/*",
-    "src/**/*.json",
-    "types/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.test.ts",
-    "**/*.test.tsx", 
-    "**/*.spec.ts",
-    "**/*.spec.tsx"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

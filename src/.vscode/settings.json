@@ -1,40 +1,15 @@
 {
   "cSpell.words": [
     "HEPA",
-    "grafana",
+    "grafana", 
     "ECU",
     "EGR",
-    "Grafana",
-    "recharts",
-    "Resizable",
-    "Plotly",
-    "tensorflow",
-    "seikaiyo",
-    "ecu",
     "egrCoolerTemp",
     "hepaEfficiency",
     "rightTempPV",
     "rightRoomTemp",
-    "leftOutletTemp",
-    "PanelProps",
-    "TimeRange",
-    "PanelData",
-    "FieldOverrideContext",
-    "PanelPlugin",
-    "tsconfig",
-    "webpack",
-    "eslint",
-    "tsx",
-    "jsx"
-  ],
-  "cSpell.enabled": true,
-  "cSpell.enableFiletypes": [
-    "typescript",
-    "javascript",
-    "json",
-    "markdown"
+    "leftOutletTemp"
   ],
   "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.suggest.autoImports": true,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.suggest.autoImports": true
 }

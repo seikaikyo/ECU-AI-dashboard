@@ -1,0 +1,233 @@
+# === ECU AI Grafana Plugin .gitignore ===
+
+# === Node.js 相關 ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# NPM 套件鎖定檔案 (選擇性保留)
+# package-lock.json  # 取消註解如果要忽略
+yarn.lock
+pnpm-lock.yaml
+
+# NPM 快取和暫存
+.npm/
+.pnpm-store/
+
+# === 建置輸出 ===
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+# === TypeScript 相關 ===
+*.tsbuildinfo
+*.d.ts.map
+
+# === Webpack 相關 ===
+.webpack/
+
+# === 測試相關 ===
+coverage/
+.coverage/
+junit.xml
+test-results/
+*.lcov
+
+# === 開發工具暫存 ===
+.cache/
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# === IDE 和編輯器 ===
+# VS Code
+.vscode/settings.json
+.vscode/launch.json
+.vscode/extensions.json
+.vscode/tasks.json
+# 保留但排除個人設定
+!.vscode/settings.json.example
+
+# IntelliJ IDEA / WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# === 作業系統檔案 ===
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# === 環境變數和機密 ===
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# API 金鑰和機密檔案
+*.key
+*.pem
+*.p12
+secrets.json
+config/secrets.json
+
+# === 日誌檔案 ===
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# === 暫存檔案 ===
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# === Grafana Plugin 特定 ===
+# Plugin 簽章檔案
+MANIFEST.txt
+*.sig
+
+# 發布包
+releases/
+packages/
+*.zip
+*.tar.gz
+*.tgz
+
+# Grafana 相關
+grafana-data/
+grafana-logs/
+
+# === 文檔生成 ===
+docs/build/
+docs/dist/
+.docusaurus/
+
+# === 快取檔案 ===
+.cache/
+.parcel-cache/
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# === 其他工具 ===
+# Storybook
+storybook-static/
+
+# Gatsby
+.cache/
+public/
+
+# Next.js
+.next/
+
+# Vite
+dist-ssr/
+
+# === 個人/本地檔案 ===
+# 個人筆記
+NOTES.md
+TODO.md
+PERSONAL.md
+
+# 本地測試檔案
+test-local/
+local-test/
+*.local.*
+
+# 備份檔案
+*.backup
+*.bak
+*~
+
+# === Playwright 測試 ===
+test-results/
+playwright-report/
+playwright/.cache/
+
+# === Docker 相關 ===
+.dockerignore
+docker-compose.override.yml
+*.dockerignore
+
+# === CI/CD 相關 ===
+# GitHub Actions (通常需要保留，這裡註解掉)
+# .github/
+
+# CircleCI
+# .circleci/
+
+# === 編輯器產生的檔案 ===
+*.code-workspace
+
+# === 其他 ===
+# 壓縮檔案
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# 執行檔
+*.exe
+*.o
+*.so
