@@ -1,0 +1,48 @@
+{
+  "type": "panel",
+  "name": "ECU AI 智慧監控面板",
+  "id": "ecu-ai-monitoring-panel",
+  "info": {
+    "description": "ECU AI 智慧監控儀表板 - 提供即時監控、AI 預測分析和系統健康狀態",
+    "author": {
+      "name": "ECU AI Team",
+      "url": "https://github.com/ecu-ai/grafana-plugin"
+    },
+    "keywords": ["ECU", "AI", "monitoring", "automotive", "EGR"],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/ecu-ai/grafana-plugin"
+      },
+      {
+        "name": "Documentation",
+        "url": "https://docs.ecu-ai.com/grafana-plugin"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "ECU AI Dashboard",
+        "path": "img/screenshot1.png"
+      }
+    ],
+    "version": "1.0.0",
+    "updated": "2025-05-28"
+  },
+  "includes": [
+    {
+      "type": "panel",
+      "name": "ECU AI 監控面板"
+    }
+  ],
+  "dependencies": {
+    "grafanaDependency": ">=8.0.0",
+    "plugins": []
+  },
+  "backend": false,
+  "executable": "",
+  "state": "stable"
+}
